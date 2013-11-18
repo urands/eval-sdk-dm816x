@@ -1,7 +1,7 @@
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/z3_fpga.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/z3_fpga.c	2012-09-23 16:09:57.608322951 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/z3_fpga.c	2013-11-18 12:18:15.258038654 -0600
 @@ -0,0 +1,2248 @@
 +#include <linux/kernel.h>
 +#include <linux/init.h>
@@ -2254,7 +2254,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/z3_fpga.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_fpga.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_fpga.h	2012-09-23 16:05:56.992322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_fpga.h	2013-11-18 12:18:15.258038654 -0600
 @@ -0,0 +1,123 @@
 +#ifndef _Z3_FPGA_H
 +#define _Z3_FPGA_H
@@ -2381,8 +2381,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_fp
 +#endif
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h	2012-03-22 23:12:54.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h	2012-09-23 16:05:56.992322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h	2013-11-18 12:18:15.262038652 -0600
 @@ -358,4 +358,10 @@
  #define TI816X_CONTROL_PADCONF_MUX_SIZE				\
  		(TI816X_CONTROL_PADCONF_USB1_DRVVBUS_OFFSET + 0x4)
@@ -2396,8 +2396,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/mux81xx.h
  #endif
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile	2012-09-23 16:05:56.968322027 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile	2012-09-23 16:16:59.468324569 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile	2013-11-18 12:18:15.182038653 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile	2013-11-18 12:18:25.006038485 -0600
 @@ -263,6 +263,7 @@
  					   board-flash.o
  obj-$(CONFIG_MACH_DM8168Z3)		+= board-dm8168z3.o \
@@ -2409,7 +2409,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/Makefile
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_app.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_app.h	2012-09-23 16:05:56.992322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_app.h	2013-11-18 12:18:15.262038652 -0600
 @@ -0,0 +1,112 @@
 +#ifndef _DM81xx_Z3_APP_H
 +#define _DM81xx_Z3_APP_H
@@ -2525,8 +2525,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/include/mach/z3_ap
 +#endif
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c	2012-09-23 16:05:56.972322027 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c	2012-09-23 16:05:56.992322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c	2013-11-18 12:18:15.246038654 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c	2013-11-18 12:18:15.342038652 -0600
 @@ -1312,39 +1312,33 @@
  	.resource	=	ti816x_emac1_resources,
  };
@@ -2627,7 +2627,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c
  	.enable_on_init		= true,
  	.sr_sdata		= sr_sensor_data,
  };
-@@ -2541,7 +2535,50 @@
+@@ -2667,7 +2661,50 @@
  	},
  };
  
@@ -2679,7 +2679,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c
  	{
  		.name = "mcasp",
  		.start = TI81XX_ASP2_BASE,
-@@ -2562,27 +2599,49 @@
+@@ -2688,27 +2725,49 @@
  	},
  };
  
@@ -2747,7 +2747,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/devices.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.c	2012-09-23 16:05:56.996322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.c	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,1110 @@
 +/*
 + * PCIe RC (Host) Driver for TI816X PCIe Module (PCIESS) configured as Root
@@ -3862,7 +3862,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.h	2012-09-23 16:05:56.996322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.h	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,24 @@
 +/*
 + * Platform data for ti816x PCIe Root Complex module.
@@ -3890,8 +3890,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/arch/arm/mach-omap2/pcie-ti816x.h
 +#endif
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c	2012-03-22 23:12:58.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c	2012-09-23 16:05:56.996322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c	2013-11-18 12:18:15.342038652 -0600
 @@ -143,7 +143,6 @@
  #define OMAP_I2C_SCLH_HSSCLH	8
  
@@ -3968,7 +3968,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/i2c/busses/i2c-omap.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.c	2012-09-23 16:05:56.996322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.c	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,956 @@
 +//#define DEBUG
 +/*
@@ -4929,7 +4929,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.h	2012-09-23 16:05:56.996322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.h	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,76 @@
 +#ifndef _VIDEO_ADV7611_H
 +#define _VIDEO_ADV7611_H
@@ -5010,7 +5010,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv7611.h
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.c	2012-09-23 16:05:56.996322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.c	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,1808 @@
 +#define DEBUG
 +/*
@@ -6823,7 +6823,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.h	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.h	2013-11-18 12:18:15.342038652 -0600
 @@ -0,0 +1,594 @@
 +/*
 + * Copyright (C) 2007-2009 Texas Instruments Inc
@@ -7422,7 +7422,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/adv9880.h
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.c	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.c	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,1144 @@
 +//#define DEBUG
 +#include <linux/ctype.h>
@@ -8571,7 +8571,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.h	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.h	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,171 @@
 +#ifndef _GV7601_H
 +#define _GV7601_H
@@ -8747,7 +8747,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/gv7601.h
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/Makefile
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/Makefile	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/Makefile	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,3 @@
 +obj-m +=  netra_autodetect.o
 +
@@ -8755,7 +8755,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/Makefile
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/dummy_vpif.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/dummy_vpif.c	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/dummy_vpif.c	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,1264 @@
 +/*
 + * Dummy vpif - This code emulates a real video device with v4l2 api and real subdevs
@@ -10023,8 +10023,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/netra/dummy_vpif.c
 +module_exit(vivi_exit);
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c	2012-03-22 23:12:58.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c	2012-09-23 16:05:57.000322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c	2013-11-18 12:18:15.346038652 -0600
 @@ -32,6 +32,7 @@
  #include <media/v4l2-device.h>
  #include <media/v4l2-chip-ident.h>
@@ -10271,8 +10271,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/tvp7002.c
  	error = tvp7002_write(sd, TVP7002_MISC_CTL_3, polarity_b);
 Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c	2012-03-22 23:12:58.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c	2012-09-23 16:05:57.000322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c	2013-11-18 12:18:15.346038652 -0600
 @@ -416,6 +416,7 @@
  {
  	int line;
@@ -10312,7 +10312,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/drivers/media/video/vivi.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/include/media/davinci/videohd.h
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/include/media/davinci/videohd.h	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/include/media/davinci/videohd.h	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,75 @@
 +/*
 + * videohd.h - Defines temporary HD standards for video drivers
@@ -10391,8 +10391,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/include/media/davinci/videohd.h
 +#endif
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig	2012-03-22 23:13:03.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig	2012-09-23 16:05:57.000322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig	2013-11-18 12:18:15.346038652 -0600
 @@ -318,3 +318,19 @@
  
  config SND_SOC_WM9090
@@ -10415,8 +10415,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Kconfig
 +
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile	2012-03-22 23:13:03.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile	2012-09-23 16:05:57.000322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile	2013-11-18 12:18:15.346038652 -0600
 @@ -5,6 +5,7 @@
  snd-soc-ad1980-objs := ad1980.o
  snd-soc-ad73311-objs := ad73311.o
@@ -10453,7 +10453,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/Makefile
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/adv7611.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/adv7611.c	2012-09-23 16:05:57.000322027 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/adv7611.c	2013-11-18 12:18:15.346038652 -0600
 @@ -0,0 +1,98 @@
 +/*
 + * ALSA SoC ADV7611 HDMI receiver audio driver
@@ -10555,8 +10555,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/adv7611.c
 +
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c	2012-09-23 16:05:56.972322027 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c	2012-09-23 16:05:57.000322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c	2013-11-18 12:18:15.246038654 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c	2013-11-18 12:23:58.418032771 -0600
 @@ -30,6 +30,9 @@
  #else
  #include <plat/asp.h>
@@ -10581,12 +10581,14 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c
  static int evm_hw_params(struct snd_pcm_substream *substream,
  			 struct snd_pcm_hw_params *params)
  {
-@@ -63,11 +69,17 @@
+@@ -62,12 +68,18 @@
+ 
  	else if (machine_is_davinci_da830_evm() ||
  				machine_is_davinci_da850_evm() ||
- 				machine_is_ti8168evm() ||
+-				machine_is_ti8168evm() ||
 -				machine_is_dm8168z3() ||
 -				machine_is_ti8148evm() ||
++				machine_is_ti8168evm() || machine_is_dm8168z3() ||
  				machine_is_dm385evm())
  		sysclk = 24576000;
 +//		sysclk = 24500000;
@@ -10976,15 +10978,16 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c
  
  	if (machine_is_davinci_evm()) {
  		evm_snd_dev_data = &dm6446_snd_soc_card_evm;
-@@ -344,10 +641,22 @@
+@@ -344,13 +641,29 @@
  		evm_snd_dev_data = &da850_snd_soc_card;
  		index = 0;
  	} else if (machine_is_ti8168evm() || machine_is_ti8148evm()
 -		    || machine_is_dm385evm() || machine_is_dm8168z3()) {
-+					|| machine_is_dm385evm()) {
++					|| machine_is_dm385evm() || machine_is_dm8168z3()) {
  		ti81xx_evm_dai_fixup();
  		evm_snd_dev_data = &ti81xx_snd_soc_card;
  		index = 0;
+-	} else
 +
 +                switch ( board_id )  {
 +                case Z3_BOARD_ID_APP_31:
@@ -10997,10 +11000,17 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c
 +
 +                }
 +
- 	} else
++	} else {
++
++	printk( KERN_DEBUG "No valid machine\n");
  		return -EINVAL;
  
-@@ -360,6 +669,44 @@
++}
++
+ 	evm_snd_device = platform_device_alloc("soc-audio", index);
+ 	if (!evm_snd_device)
+ 		return -ENOMEM;
+@@ -360,6 +673,44 @@
  	if (ret)
  		platform_device_put(evm_snd_device);
  
@@ -11045,11 +11055,10 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-evm.c
  	return ret;
  }
  
- static int davinci_hdmi_dai_startup(struct snd_pcm_substream *substream,
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c	2012-09-23 16:05:56.972322027 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c	2012-09-23 16:05:57.004322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c	2013-11-18 12:18:15.246038654 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c	2013-11-18 12:18:15.346038652 -0600
 @@ -29,6 +29,11 @@
  #include <sound/initval.h>
  #include <sound/soc.h>
@@ -11706,8 +11715,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.c
  		goto err_iounmap;
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h	2012-03-22 23:13:03.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h	2012-09-23 16:05:57.004322027 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h	2013-11-18 12:18:15.350038652 -0600
 @@ -32,7 +32,7 @@
  #define DAVINCI_MCASP_I2S_DAI	0
  #define DAVINCI_MCASP_DIT_DAI	1
@@ -11753,7 +11762,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/davinci/davinci-mcasp.h
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7600.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7600.c	2012-07-30 19:36:11.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7600.c	2013-11-18 12:18:15.350038652 -0600
 @@ -0,0 +1,96 @@
 +/*
 + * ALSA SoC GV7600 SDI transmitter audio driver
@@ -11854,7 +11863,7 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7600.c
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7601.c
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7601.c	2012-07-30 19:36:11.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7601.c	2013-11-18 12:18:15.350038652 -0600
 @@ -0,0 +1,100 @@
 +/*
 + * ALSA SoC GV7601 SDI receiver audio driver
@@ -11958,8 +11967,8 @@ Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/gv7601.c
 +
 Index: kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/tlv320aic3x.c
 ===================================================================
---- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/tlv320aic3x.c	2012-03-22 23:13:03.000000000 -0600
-+++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/tlv320aic3x.c	2012-09-23 16:20:28.948325372 -0600
+--- kernel.orig/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/tlv320aic3x.c	2012-08-30 05:48:03.000000000 -0600
++++ kernel/linux-2.6.37-psp04.04.00.01/sound/soc/codecs/tlv320aic3x.c	2013-11-18 12:18:15.350038652 -0600
 @@ -50,6 +50,7 @@
  #include <sound/initval.h>
  #include <sound/tlv.h>
