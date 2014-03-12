@@ -22,3 +22,4 @@
 0022-add-support-to-capture-not-stride-format.patch
 0023-videocrop-nv12-support.patch
 0024-v4l2src-add-crop-scale-support.patch
+0025-disable-v4l2sink-unsupported-features.patch
