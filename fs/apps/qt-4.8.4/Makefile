@@ -1,6 +1,6 @@
 QT_VERSION=4.8.4
 
-PKG_URL=http://releases.qt-project.org/qt4/source/
+PKG_URL=http://download.qt-project.org/archive/qt/4.8/4.8.4/
 PKG_TARBALL=qt-everywhere-opensource-src-$(QT_VERSION).tar.gz
 PKG_SHA1SUM=f5880f11c139d7d8d01ecb8d874535f7d9553198
 
