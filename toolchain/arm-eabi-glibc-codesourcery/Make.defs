@@ -38,11 +38,11 @@ C := $(shell echo $(TOOLCHAIN_PATH))
 BSP_PATH := $(if $(findstring xxx$(C),xxx$(PATH)),$(PATH),$(C)/bin:$(PATH))
 EXECUTE	:= export PATH=$(value BSP_PATH) ;
 
-TOOLCHAIN_PREFIX := arm-none-linux-gnueabi
+TOOLCHAIN_PREFIX := arm-linux-gnueabi
 
-AUTOTOOLS_TOOLCHAIN_PREFIX := arm-none-linux-gnueabi
-TOOLCHAIN_LIB	:= $(TOOLCHAIN_PATH)/arm-none-linux-gnueabi/libc/lib
-TOOLCHAIN_BIN	:= $(TOOLCHAIN_PATH)/arm-none-linux-gnueabi/libc/usr/bin
+AUTOTOOLS_TOOLCHAIN_PREFIX := arm-linux-gnueabi
+TOOLCHAIN_LIB	:= $(TOOLCHAIN_PATH)/arm-linux-gnueabi/lib
+TOOLCHAIN_BIN	:= $(TOOLCHAIN_PATH)/arm-linux-gnueabi/bin
 
 ifeq ($(USE_CCACHE),no)
         CCACHE=

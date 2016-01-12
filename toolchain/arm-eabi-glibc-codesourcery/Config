@@ -39,7 +39,7 @@ config KERNEL_TOOLCHAIN_PATH
 
 config TOOLCHAIN_PATH
         string "Toolchain binaries path"
-        default "/opt/codesourcery/arm-2009q1"
+        default "/usr"
 	depends on TOOLCHAIN_PATH_GLOBAL || TOOLCHAIN_PATH_PER_COMPONENT
         help
             Path on the file system of the toolchain binaries

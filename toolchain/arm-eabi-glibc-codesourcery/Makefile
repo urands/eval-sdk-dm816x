@@ -48,57 +48,57 @@ build:
 buildfs:
 	$(V) mkdir -p $(FSROOT)/{lib,usr/bin}
 	# Installing the dynamic loader
-	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/ld-2.8.so \
+	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/ld-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libc
-	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/libc-2.8.so \
+	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/libc-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libdl
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libdl-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libdl-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libgcc
 	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libgcc_s.so.1 \
 	    $(FSROOT)/lib/
 	# Installing shared libm
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libm-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libm-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libnsl
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnsl-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnsl-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libnss (minimals, compat,files,dns)
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_compat-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_compat-2.21.so \
 	    $(FSROOT)/lib/
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_dns-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_dns-2.21.so \
 	    $(FSROOT)/lib/
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_files-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libnss_files-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libpthread
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libpthread-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libpthread-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libresolv
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libresolv-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libresolv-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libutil
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libutil-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libutil-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared libcrypt
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libcrypt-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libcrypt-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing shared librt
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/librt-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/librt-2.21.so \
 	    $(FSROOT)/lib/
 	# Installing others
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libBrokenLocale-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libBrokenLocale-2.21.so \
 	    $(FSROOT)/lib/
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libanl-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libanl-2.21.so \
 	    $(FSROOT)/lib/
-	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libcidn-2.8.so \
+	$(V)install -D --mode=755 $(TOOLCHAIN_LIB)/libcidn-2.21.so \
 	    $(FSROOT)/lib/
 
 ifeq ($(CONFIG_TOOLCHAIN_INSTALL_CPP_SUPPORT),y)
 	# Installing shared libstdc++ and friends
-	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/../usr/lib/libstdc++.so.6.0.10 \
-	    $(FSROOT)/lib/libstdc++.so.6.0.10
+	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/../usr/lib/libstdc++.so.6.0.21 \
+	    $(FSROOT)/lib/libstdc++.so.6.0.21
 endif
 
 ifeq ($(CONFIG_TOOLCHAIN_INSTALL_GCONV_MODULES),y)
