@@ -2,14 +2,14 @@
 # Copyright (C) 2011 Ridgerun (http://www.ridgerun.com). 
 ##$L$
 PKG_URL=http://ftp.gnu.org/pub/gnu/ncurses/
-PKG_TARBALL=ncurses-5.7.tar.gz
-PKG_SHA1SUM=8233ee56ed84ae05421e4e6d6db6c1fe72ee6797
+PKG_TARBALL=ncurses-6.0.tar.gz
+PKG_SHA1SUM=acd606135a5124905da770803c05f1f20dd3b21c
 
 # We need to use prefix=/usr to avoid ncurses from looking for terminfos in the build dir
-AUTOTOOLS_PARAMS=--with-shared --prefix=/usr
+AUTOTOOLS_PARAMS=--with-shared --prefix=/usr --with-abi-version=5
 DESTDIR=$(FSDEVROOT)
 
-LIBRARIES=  /usr/lib/{libncurses.so.5.7,libform.so.5.7,libmenu.so.5.7,libpanel.so.5.7}
+LIBRARIES=  /usr/lib/{libncurses.so.5.9,libform.so.5.9,libmenu.so.5.9,libpanel.so.5.9}
 OTHERS= /usr/share/terminfo/v/vt100 \
 	/usr/share/terminfo/v/vt102
 

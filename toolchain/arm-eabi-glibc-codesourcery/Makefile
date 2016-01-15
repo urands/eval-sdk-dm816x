@@ -97,7 +97,7 @@ buildfs:
 
 ifeq ($(CONFIG_TOOLCHAIN_INSTALL_CPP_SUPPORT),y)
 	# Installing shared libstdc++ and friends
-	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/../usr/lib/libstdc++.so.6.0.21 \
+	$(V) install -D --mode=755 $(TOOLCHAIN_LIB)/libstdc++.so.6.0.21 \
 	    $(FSROOT)/lib/libstdc++.so.6.0.21
 endif
 

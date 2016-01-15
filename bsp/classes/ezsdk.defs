@@ -64,7 +64,7 @@ RULES_MAKE?=$(FETCHER_EXTRACT_DIRECTORY_NAME)/Rules.make
 -include $(RULES_MAKE)
 
 # Variables that control EZSDK search
-EZSDK_SEARCH_PATH?=$(HOME)/$(EZSDK_NAME) /usr/$(EZSDK_NAME) /usr/local/$(EZSDK_NAME) /usr/local/ezsdk
+EZSDK_SEARCH_PATH?=$(HOME)/arm/ezsdk $(HOME)/$(EZSDK_NAME) /usr/$(EZSDK_NAME) /usr/local/$(EZSDK_NAME) /usr/local/ezsdk 
 EZSDK_VERIFICATION_FILE?=Rules.make
 
 # This variable is usually overwriten by the ezsdk class file with the respective values for the EZSDK version
@@ -158,7 +158,7 @@ endef
 #
 define ezsdk_tarball_create
   cd $(1) && \
-  tar $(EZSDK_TAR_VERBOSE) \
+  sudo tar $(EZSDK_TAR_VERBOSE) \
       --no-same-permissions \
       --atime-preserve \
       --null \
@@ -171,7 +171,8 @@ define ezsdk_tarball_create
       --create \
       --gzip \
       --file=$(2)/$(EZSDK_TARBALL_NAME) \
-      ../$(EZSDK_NAME)  \
+      ../ezsdk  \
+      && sudo chmod 777 $(2)/$(EZSDK_TARBALL_NAME) \
   || \
       { \
         $(ECHO) "$(ERROR_COLOR)Error:$(NORMAL_COLOR) while creating $(2)/$(EZSDK_TARBALL_NAME)" ; \
@@ -199,8 +200,9 @@ define ezsdk_tar
              exit -1 ; \
          fi ; \
          \
-         $(ECHO) "Found EZSDK at $$PATH2TEST" ; \
-          EZSDK_FOUND_INSTALLATION_DIR=yes ; \
+         EZSDK_INSTALLATION_DIR=$$PATH2TEST ; \
+         $(ECHO) "Found EZSDK at $$EZSDK_INSTALLATION_DIR" ; \
+         EZSDK_FOUND_INSTALLATION_DIR=yes ; \
          \
          $(call ezsdk_tarball_target_dir) ; \
          \
@@ -215,7 +217,7 @@ define ezsdk_tar
          \
          $(ECHO) "Creating EZSDK tarball at $$EZSDK_TARBALL_TARGET_DIR/$(EZSDK_TARBALL_NAME)" ; \
          pushd . > /dev/null ; \
-         $(call ezsdk_tarball_create,$$PATH2TEST,$$EZSDK_TARBALL_TARGET_DIR) ; \
+         $(call ezsdk_tarball_create,$$EZSDK_INSTALLATION_DIR,$$EZSDK_TARBALL_TARGET_DIR) ; \
          popd  > /dev/null ; \
          \
          $(ECHO) "Generating EZSDK tarball sha1sum $$EZSDK_TARBALL_TARGET_DIR/$(EZSDK_TARBALL_SHA1_NAME)" ; \

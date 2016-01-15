@@ -3,8 +3,8 @@
 ##$L$
 
 PKG_URL=ftp://ftp.alsa-project.org/pub/utils
-PKG_TARBALL=alsa-utils-1.0.24.2.tar.bz2
-PKG_SHA1SUM=09921047d94369b9bc9f84fb29c61a6baae91bbb
+PKG_TARBALL=alsa-utils-1.0.29.tar.bz2
+PKG_SHA1SUM=8b456e2d8adf538aef3fc2d24aae2377509f9544
 
 # Since alsa-lib uses modules, we cross-compile with prefix=/usr and setup the DESTDIR
 DESTDIR=$(FSDEVROOT)

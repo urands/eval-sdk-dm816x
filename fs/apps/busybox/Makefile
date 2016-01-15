@@ -3,8 +3,8 @@
 ##$L$
 
 PKG_URL=http://busybox.net/downloads/
-PKG_TARBALL=busybox-1.20.2.tar.bz2
-PKG_SHA1SUM=dd2e3684b13c0071d480e97b569041e69538e798
+PKG_TARBALL=busybox-1.24.1.tar.bz2
+PKG_SHA1SUM=157d14d24748b4505b1a418535688706a2b81680
 
 include ../../../bsp/classes/rrsdk.class
 

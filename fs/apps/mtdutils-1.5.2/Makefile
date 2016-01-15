@@ -3,10 +3,10 @@
 ##$L$
 
 PKG_URL=ftp://ftp.infradead.org/pub/mtd-utils/
-PKG_TARBALL=mtd-utils-1.4.2.tar.bz2
-PKG_SHA1SUM=a15b8eb5d20ef27ce785cd83412f4bd6770d8a90
+PKG_TARBALL=mtd-utils-1.5.2.tar.bz2
+PKG_SHA1SUM=6d5420e3d75ebcdadcbca3e416766db6d697f2e9
 
-BINARIES= usr/sbin/{doc_loadbios,docfdisk,flash_erase,flash_eraseall,flash_info,flash_lock}\
+BINARIES= usr/sbin/{doc_loadbios,docfdisk,flash_erase,flash_eraseall,mtdpart}\
 	usr/sbin/{flash_otp_dump,flash_otp_info,flash_unlock,flashcp,ftl_check,ftl_format,ubiupdatevol}\
 	usr/sbin/{jffs2dump,mkfs.jffs2,mkfs.ubifs,mtd_debug,mtdinfo,nanddump,nandtest,nandwrite}\
 	usr/sbin/{nftl_format,nftldump,recv_image,rfddump,rfdformat,serve_image,sumtool,ubiattach}\

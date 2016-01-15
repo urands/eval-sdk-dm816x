@@ -3,8 +3,8 @@
 ##$L$
 
 PKG_URL=ftp://ftp.gnu.org/gnu/mtools/
-PKG_TARBALL=mtools-4.0.17.tar.gz
-PKG_SHA1SUM=eebfab51148c4ab20a6aca3cea8057da5a11bdc8
+PKG_TARBALL=mtools-4.0.18.tar.gz
+PKG_SHA1SUM=d703db71a409837a37db10a09ef63a35183f7565
 
 APPS_LDFLAGS=-Wl,--rpath-link -Wl,$(FSDEVROOT)/usr/lib
 #APPS_LIBS=-liconv
